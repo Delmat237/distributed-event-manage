@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tp3.controller.MessagesController"
+      spacing="10"  stylesheets="/css/messages.css">
+
+
+    <padding>
+        <Insets top="25.0" left="25.0" right="25.0" bottom="25.0"/>
+    </padding>
+    <Label text="Boîte de réception" styleClass="section-title"/>
+
+    <ListView fx:id="listMessages" prefHeight="300"/>
+
+    <HBox spacing="10">
+        <TextArea fx:id="txtMessage" promptText="Écrire un message…" HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnEnvoyer" styleClass="btn-send">
+            <graphic>
+                <FontIcon iconLiteral="fas-paper-plane"/>
+            </graphic>
+        </Button>
+    </HBox>
+
+    <Button fx:id="btnRetour" text="← Retour au tableau de bord" styleClass="btn-retour" />
+</VBox>

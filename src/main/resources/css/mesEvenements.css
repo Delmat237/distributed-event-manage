@@ -1,0 +1,20 @@
+/* mesEvenements.css*/
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+}
+
+.column-header, .table-row-cell {
+    -fx-font-size: 14px;
+}
+
+.action-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-padding: 6 12;
+}
+
+.btn-action {
+}

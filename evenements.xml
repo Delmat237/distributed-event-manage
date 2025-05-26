@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<evenements>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="concert">
+        <id>eb43142f-2029-450d-908e-f4bc75b53c88</id>
+        <nom>PIPO DANCE</nom>
+        <dateDebut>2025-05-25T10:00</dateDebut>
+        <dateFin>2025-05-26T12:00</dateFin>
+        <lieu>ENSPY</lieu>
+        <capaciteMax>100</capaciteMax>
+        <artiste>AZANGUE</artiste>
+        <genreMusical>HIP HOP</genreMusical>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
+        <id>473cb7ce-8233-4b41-9481-b811fd6af201</id>
+        <nom>JAVA CONFERENCE</nom>
+        <dateDebut>2025-06-25T10:00</dateDebut>
+        <dateFin>2025-06-02T15:30</dateFin>
+        <lieu>ENSPY</lieu>
+        <capaciteMax>100</capaciteMax>
+        <theme>POO avancée</theme>
+        <intervenants>BALA</intervenants>
+        <intervenants>PIO</intervenants>
+    </evenement>
+</evenements>

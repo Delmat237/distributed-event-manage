@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import java.lang.String?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tp3.controller.LoginController"
+            stylesheets="@/css/login.css"
+            prefWidth="420" prefHeight="520"
+            styleClass="root">
+
+    <children>
+
+        <!-- Centrage principal -->
+        <VBox alignment="CENTER" spacing="20"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="40.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              styleClass="container"
+              maxWidth="320"
+              layoutX="50"
+              layoutY="50"
+              translateY="20">
+
+            <Label text="Connexion" styleClass="label-title" />
+
+            <HBox alignment="CENTER" spacing="10" styleClass="input-group">
+                <FontIcon iconLiteral="fas-user" styleClass="font-icon"/>
+                <TextField fx:id="emailField" promptText="Votre addresse Email" styleClass="text-field"/>
+            </HBox>
+
+            <HBox  alignment="CENTER" spacing="10" styleClass="input-group">
+                <FontIcon iconLiteral="fas-lock" styleClass="font-icon"/>
+                <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="password-field"/>
+            </HBox>
+
+            <ComboBox fx:id="roleComboBox" promptText="Rôle" styleClass="combo-box">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Organisateur"/>
+                        <String fx:value="Participant"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Button text="Se connecter" onAction="#handleLogin" styleClass="button-login" />
+
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="Pas encore inscrit ?" />
+                <Hyperlink text="Créer un compte" onAction="#goToRegister" />
+            </HBox>
+        </VBox>
+
+        <!-- Footer correctement ancré en bas -->
+        <Label text="© ALD - 3 GI - 2025 ENSPY"
+               id="footer"
+               AnchorPane.bottomAnchor="10.0"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0"
+               alignment="CENTER"
+               maxWidth="1.7976931348623157E308" />
+    </children>
+</AnchorPane>

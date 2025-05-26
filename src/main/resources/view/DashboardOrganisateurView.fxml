@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+<BorderPane fx:id="rootPane"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tp3.controller.DashboardOrganisateurController"
+            stylesheets="/css/dashboardOrg.css">
+
+    <!-- TOP NAVIGATION BAR -->
+    <top>
+        <HBox styleClass="top-bar" spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10.0" left="10.0" right="10.0" bottom="10.0"/>
+            </padding>
+            <FontIcon iconLiteral="fas-user-cog" iconSize="20" styleClass="icon"/>
+            <Label text="Tableau de bord de l’organisateur" styleClass="title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnLoggout" text="Déconnexion" styleClass="logout-btn"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDE MENU -->
+    <left>
+        <VBox styleClass="side-menu" spacing="20">
+            <padding>
+                <Insets top="15.0" left="15.0" right="15.0" bottom="15.0"/>
+            </padding>
+            <Button fx:id="btnCreer" text="Créer un événement" graphicTextGap="10" styleClass="side-btn" >
+                <graphic>
+                    <FontIcon iconLiteral="fas-plus-circle"/>
+                </graphic>
+            </Button>
+            <Button fx:id="btnMesEvenements" text="Mes événements" graphicTextGap="10" styleClass="side-btn" >
+                <graphic>
+                    <FontIcon iconLiteral="fas-list"/>
+                </graphic>
+            </Button>
+            <Button fx:id="btnMessages" text="Messages" graphicTextGap="10" styleClass="side-btn" >
+                <graphic>
+                    <FontIcon iconLiteral="fas-envelope" />
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20"  VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets top="20.0" left="20.0" right="20.0" bottom="20.0"/>
+                </padding>
+                <!-- STATS CARDS -->
+                <HBox spacing="20" HBox.hgrow="ALWAYS">
+                    <VBox styleClass="card" alignment="CENTER" VBox.vgrow="ALWAYS">
+                        <FontIcon iconLiteral="fas-calendar-check" iconSize="28" styleClass="card-icon"/>
+                        <Label text="Événements organisés" styleClass="card-title"/>
+                        <Label fx:id="lblOrganised" text="0" styleClass="card-number"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" VBox.vgrow="ALWAYS">
+                        <FontIcon iconLiteral="fas-calendar-times" iconSize="28" styleClass="card-icon"/>
+                        <Label text="Événements annulés" styleClass="card-title"/>
+                        <Label fx:id="lblCancelled" text="0" styleClass="card-number"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" VBox.vgrow="ALWAYS">
+                        <FontIcon iconLiteral="fas-calendar-day" iconSize="28" styleClass="card-icon"/>
+                        <Label text="Événements en cours" styleClass="card-title"/>
+                        <Label fx:id="lblOngoing" text="0" styleClass="card-number"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER" VBox.vgrow="ALWAYS">
+                        <FontIcon iconLiteral="fas-calendar-plus" iconSize="28" styleClass="card-icon"/>
+                        <Label text="Événements à venir" styleClass="card-title"/>
+                        <Label fx:id="lblUpcoming" text="0" styleClass="card-number"/>
+                    </VBox>
+                </HBox>
+
+                <!-- TABLE OF RECENT EVENTS -->
+                <Label text="Événements récents" styleClass="section-title"/>
+                <TableView fx:id="tableEvenements" prefHeight="300" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNom" text="Nom"/>
+                        <TableColumn fx:id="colDate" text="Date"/>
+                        <TableColumn fx:id="colStatut" text="Statut"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </ScrollPane>
+    </center>
+    <Label text="© ALD -  3 GI -2025 ENSPY" layoutY="520" layoutX="180" id="footer"/>
+
+</BorderPane>

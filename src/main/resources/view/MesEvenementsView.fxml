@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tp3.controller.MesEvenementsController"
+      spacing="15" stylesheets="/css/mesEvenements.css">
+
+    <padding>
+        <Insets top="25.0" left="25.0" right="25.0" bottom="25.0"/>
+    </padding>
+
+    <Label text="Mes Événements" styleClass="section-title"/>
+
+    <TableView fx:id="tableMesEvenements">
+        <columns>
+            <TableColumn fx:id="colNom" text="Nom"/>
+            <TableColumn fx:id="colDate" text="Date"/>
+            <TableColumn fx:id="colStatut" text="Statut"/>
+            <TableColumn fx:id="colActions" text="Actions"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Modifier" styleClass="btn-action">
+            <graphic>
+                <FontIcon iconLiteral="fas-edit"/>
+            </graphic>
+        </Button>
+        <Button text="Supprimer" styleClass="btn-action">
+            <graphic>
+                <FontIcon iconLiteral="fas-trash-alt"/>
+            </graphic>
+        </Button>
+    </HBox>
+    <Button fx:id="btnRetour" text="← Retour au tableau de bord" styleClass="btn-retour" />
+</VBox>

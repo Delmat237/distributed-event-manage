@@ -1,0 +1,70 @@
+.top-bar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+.title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+.logout-btn {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+.side-menu {
+    -fx-background-color: #34495e;
+}
+.side-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+.side-btn:hover {
+    -fx-background-color: #2c3e50;
+}
+.card {
+    -fx-background-color: #ecf0f1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-alignment: center;
+    -fx-spacing: 5;
+    -fx-pref-width: 200;
+}
+.card-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+}
+.card-number {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+.card-icon {
+    -fx-icon-color: #2980b9;
+}
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.side-btn {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #2e3b4e;
+    -fx-padding: 10 15;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.side-btn .ikonli-font-icon {
+    -fx-fill: #ffffff;
+}
+/* Footer */
+#footer {
+    -fx-alignment: center;
+    -fx-padding: 10;
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 11px;
+}

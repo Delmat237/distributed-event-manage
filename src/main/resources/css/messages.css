@@ -1,0 +1,19 @@
+/*messages.css*/
+.root {
+    -fx-background-color: #eaf2f8;
+    -fx-padding: 20;
+}
+
+.message-area {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+.send-btn {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}

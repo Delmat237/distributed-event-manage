@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tp3.controller.RegisterController"
+            stylesheets="/css/register.css"
+            prefWidth="500" prefHeight="550">
+
+    <VBox id="registerContainer" alignment="CENTER" spacing="15" AnchorPane.topAnchor="40" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30">
+        <Label text="Créer un compte" styleClass="label-title"/>
+
+        <!-- Nom -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <FontIcon iconLiteral="fas-user" iconSize="18" styleClass="font-icon"/>
+            <TextField fx:id="nomField" promptText="Nom" />
+
+        </HBox>
+
+        <!-- Prénom -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <FontIcon iconLiteral="fas-user-circle" iconSize="18" styleClass="font-icon"/>
+            <TextField fx:id="prenomField" promptText="Prénom" />
+
+        </HBox>
+
+        <!-- Email -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <FontIcon iconLiteral="fas-envelope" iconSize="18" styleClass="font-icon"/>
+            <VBox spacing="2">
+                <TextField fx:id="emailField" promptText="Adresse email"/>
+                <Label fx:id="emailError" textFill="red" styleClass="error-label"/>
+            </VBox>
+        </HBox>
+
+        <!-- Mot de passe -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <FontIcon iconLiteral="fas-lock" iconSize="18" styleClass="font-icon"/>
+
+            <VBox spacing="2">
+                <PasswordField fx:id="passwordField" promptText="Mot de passe" />
+                <Label fx:id="passwordError" textFill="red" styleClass="error-label"/>
+            </VBox>
+        </HBox>
+
+        <!-- Confirmer mot de passe -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <FontIcon iconLiteral="fas-lock" iconSize="18" styleClass="font-icon"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirmer le mot de passe" />
+        </HBox>
+
+        <!-- Rôle -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <FontIcon iconLiteral="fas-user-tag" iconSize="18" styleClass="font-icon"/>
+            <ComboBox fx:id="roleComboBox" promptText="Rôle">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Organisateur"/>
+                        <String fx:value="Participant"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+
+        <!-- Bouton avec icône -->
+        <Button fx:id="registerButton" text=" S'inscrire" styleClass="button-register">
+            <graphic>
+                <FontIcon iconLiteral="fas-user-plus" iconSize="16" style="-fx-fill: white;"/>
+            </graphic>
+
+        </Button>
+
+        <!-- Connexion -->
+        <HBox alignment="CENTER">
+            <Label text="Déjà un compte ?"/>
+            <Hyperlink text="Connexion" onAction="#goToLogin"/>
+        </HBox>
+
+        <!-- Erreurs -->
+        <Label fx:id="errorLabel" textFill="red"/>
+
+
+        <!-- Footer correctement ancré en bas -->
+        <Label text="© ALD - 3 GI - 2025 ENSPY"
+               id="footer"
+               AnchorPane.bottomAnchor="10.0"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0"
+               alignment="CENTER"
+               maxWidth="1.7976931348623157E308" />
+    </VBox>
+
+
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tp3.controller.CreerEvenementController"
+      spacing="15" alignment="CENTER_LEFT" stylesheets="/css/creerEvenement.css">
+
+    <padding>
+        <Insets top="25.0" left="25.0" right="25.0" bottom="25.0"/>
+    </padding>
+
+    <Label alignment="CENTER" text="Créer un nouvel événement" styleClass="form-title"/>
+
+    <!-- Type d'événement -->
+    <ComboBox fx:id="comboType" promptText="Type d'événement">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Concert"/>
+                <String fx:value="Conférence"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <TextField fx:id="txtNom" promptText="Nom de l'événement"/>
+    <TextArea fx:id="txtDescription" promptText="Description" prefRowCount="3"/>
+    <!-- Date de début -->
+    <Label text="Date et heure de début"/>
+    <HBox spacing="10">
+        <DatePicker fx:id="dateDebutField" promptText="Date"/>
+        <TextField fx:id="heureDebutField" promptText="Heure (HH:mm)"/>
+    </HBox>
+
+    <!-- Date de fin -->
+    <Label text="Date et heure de fin"/>
+    <HBox spacing="10">
+        <DatePicker fx:id="dateFinField" promptText="Date"/>
+        <TextField fx:id="heureFinField" promptText="Heure (HH:mm)"/>
+    </HBox>
+
+    <TextField fx:id="txtLieu" promptText="Lieu"/>
+    <TextField fx:id="txtCapacite" promptText="Capacité maximale"/>
+
+    <!-- Champs spécifiques aux types -->
+    <VBox fx:id="boxConcert" spacing="10" visible="false" managed="false">
+        <TextField fx:id="txtArtiste" promptText="Artiste"/>
+        <TextField fx:id="txtGenre" promptText="Genre musical"/>
+    </VBox>
+
+    <VBox fx:id="boxConference" spacing="10" visible="false" managed="false">
+        <TextField fx:id="txtTheme" promptText="Thème"/>
+        <TextArea fx:id="txtIntervenants" promptText="Intervenants (séparés par des virgules)" prefRowCount="2"/>
+    </VBox>
+
+    <Button fx:id="btnCreer" alignment="CENTER" text="Créer" styleClass="btn-submit">
+        <graphic>
+            <FontIcon iconLiteral="fas-check-circle"/>
+        </graphic>
+    </Button>
+
+    <Button fx:id="btnRetour" text="← Retour au tableau de bord" styleClass="btn-retour" />
+
+
+</VBox>

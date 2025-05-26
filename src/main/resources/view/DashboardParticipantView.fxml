@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="rootPane"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tp3.controller.DashboardParticipantController"
+            stylesheets="/css/dashboardPart.css">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox styleClass="top-bar" spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" left="10" right="10" bottom="10"/>
+            </padding>
+            <FontIcon iconLiteral="fas-user" iconSize="20" styleClass="icon"/>
+            <Label text="Tableau de bord du participant" styleClass="title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnLoggout" text="Déconnexion" styleClass="logout-btn"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDE MENU -->
+    <left>
+        <VBox styleClass="side-menu" spacing="20">
+            <padding>
+                <Insets top="15" left="15" right="15" bottom="15"/>
+            </padding>
+            <Button fx:id="btnInscriptions" text="Mes inscriptions" graphicTextGap="10" styleClass="side-btn">
+                <graphic>
+                    <FontIcon iconLiteral="fas-calendar-check"/>
+                </graphic>
+            </Button>
+            <Button fx:id="btnProfil" text="Profil" graphicTextGap="10" styleClass="side-btn">
+                <graphic>
+                    <FontIcon iconLiteral="fas-user-edit"/>
+                </graphic>
+            </Button>
+            <Button fx:id="btnMessages" text="Messages" graphicTextGap="10" styleClass="side-btn">
+                <graphic>
+                    <FontIcon iconLiteral="fas-envelope"/>
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20" >
+                <padding>
+                <Insets top="20.0" left="20.0" right="20.0" bottom="20.0"/>
+            </padding>
+
+                <!-- STATISTICS -->
+                <HBox spacing="20">
+                    <VBox styleClass="card" alignment="CENTER">
+                        <FontIcon iconLiteral="fas-clipboard-list" iconSize="28" styleClass="card-icon"/>
+                        <Label text="Événements inscrits" styleClass="card-title"/>
+                        <Label fx:id="nbTotalLabel" text="0" styleClass="card-number"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER">
+                        <FontIcon iconLiteral="fas-calendar-day" iconSize="28" styleClass="card-icon"/>
+                        <Label text="À venir" styleClass="card-title"/>
+                        <Label fx:id="nbAVenirLabel" text="0" styleClass="card-number"/>
+                    </VBox>
+                    <VBox styleClass="card" alignment="CENTER">
+                        <FontIcon iconLiteral="fas-history" iconSize="28" styleClass="card-icon"/>
+                        <Label text="Événements passés" styleClass="card-title"/>
+                        <Label fx:id="nbEnCoursLabel" text="0" styleClass="card-number"/>
+                    </VBox>
+                </HBox>
+
+                <!-- EVENTS TABLE -->
+                <Label text="Événements disponibles" styleClass="section-title"/>
+                <TableView fx:id="tableEvenementsDisponibles" prefHeight="300">
+                    <columns>
+                        <TableColumn fx:id="colNom" text="Nom"/>
+                        <TableColumn fx:id="colDate" text="Date"/>
+                        <TableColumn fx:id="colLieu" text="Lieu"/>
+                        <TableColumn fx:id="colStatut" text="Statut"/>
+                    </columns>
+                </TableView>
+
+                <!-- REFRESH BUTTON -->
+                <HBox alignment="CENTER_RIGHT">
+                    <Button text="Actualiser" styleClass="refresh-btn"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+    <Label text="© ALD -  3 GI -2025 ENSPY" layoutY="520" layoutX="180" id="footer"/>
+
+</BorderPane>
