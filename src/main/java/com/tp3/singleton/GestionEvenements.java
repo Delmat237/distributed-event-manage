@@ -9,80 +9,122 @@ import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
+
+
 public class GestionEvenements {
-    // Singleton
-    // Instance unique de la classe
+
+    // Instance unique (singleton)
     private static GestionEvenements instance;
+
+    // Stockage des événements en mémoire (cache)
     private Map<String, Evenement> evenements = new HashMap<>();
-    private Logger LOGGER = Logger.getLogger(GestionEvenements.class.getName());
-    private GestionEvenements() {}
 
+    // Logger pour journalisation
+    private final Logger LOGGER = Logger.getLogger(GestionEvenements.class.getName());
+
+    // Constructeur privé pour empêcher l’instanciation directe (pattern Singleton)
+    private GestionEvenements() {
+        try {
+            // Chargement des événements depuis le fichier JSON au démarrage
+            Map<String, Evenement> loaded = JsonSerializer.loadEvenementFromJson(this, "evenements.json");
+            if (loaded != null) {
+                this.evenements = loaded;
+            }
+        } catch (IOException e) {
+            LOGGER.warning("⚠️ Aucune donnée JSON chargée au démarrage : " + e.getMessage());
+        }
+    }
+
+    // Méthode statique pour obtenir l’instance unique de la classe
     public static GestionEvenements getInstance() {
-        /*
-         Si aucune instance n'est lancée , on créée ,
-         si non on renvoie l'instance est cours
-
-         */
         if (instance == null) {
             instance = new GestionEvenements();
         }
         return instance;
     }
 
-    public void ajouterEvenement(Evenement event) throws EvenementDejaExistantException, IOException {
-        // Étape 1 : Charger les événements JSON existants (s’ils existent)
-        try {
-            JsonSerializer.loadEvenementFromJson(this,"evenements.json");
-
-        } catch (IOException e) {
-            System.err.println("⚠️ Aucune donnée JSON existante ou erreur de lecture.");
+    /**
+     * Ajoute un événement dans la liste.
+     * @param event L’événement à ajouter
+     * @throws EvenementDejaExistantException si un événement avec le même ID existe déjà
+     */
+    public void ajouterEvenement(Evenement event) throws EvenementDejaExistantException {
+        // Vérifie si un événement avec cet ID existe déjà
+        if (evenements.containsKey(event.getId())) {
+            throw new EvenementDejaExistantException("⚠️ Événement déjà existant avec l'ID : " + event.getId());
         }
 
-        // Étape 2 : Vérifier doublon
-        if (getEvenements().containsKey(event.getId())) {
-            throw new EvenementDejaExistantException("⚠️ Evenement déjà existant avec l'ID : " + event.getId());
-        }
-
-        // Étape 3 : Ajouter
+        // Ajoute l’événement à la map
         evenements.put(event.getId(), event);
-        LOGGER.info("✅ AJOUT DE L'EVENEMENT '" + event.getNom() + "' RÉUSSI");
+        LOGGER.info("✅ AJOUT : " + event.getNom());
 
-        // Étape 4 : Sérialiser en JSON
-        try {
-            JsonSerializer.saveEvenementToJson(this, "evenements.json");
-            System.out.println("✅ Données enregistrées en JSON.");
-        } catch (IOException e) {
-            System.err.println("❌ Erreur JSON: " + e.getMessage());
-        }
-
-        // Étape 5 : Sérialiser en XML
-        try {
-            List<Evenement> listeEvenements = new ArrayList<>(this.getEvenements().values());
-            XmlSerializer.saveEvenementsToXml(listeEvenements, "evenements.xml");
-            System.out.println("✅ Données enregistrées en XML.");
-        } catch (JAXBException e) {
-            System.err.println("❌ Erreur XML: " + e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        // Sauvegarde dans les fichiers JSON et XML
+        sauvegarder();
     }
 
+    /**
+     * Supprime un événement par son ID.
+     * @param id L'identifiant de l’événement
+     * @throws IOException si une erreur survient lors de la sauvegarde
+     */
     public void supprimerEvenement(String id) throws IOException {
-        LOGGER.info("SUPPRESSION DE L'EVENEMENT "+ getEvenements().get(id).getNom() + " REUSSI");
-        evenements.remove(id);
+        Evenement event = evenements.get(id);
 
+        if (event != null) {
+            evenements.remove(id);
+            LOGGER.info("🗑️ SUPPRIMÉ : " + event.getNom());
+            sauvegarder();
+        } else {
+            LOGGER.warning("⚠️ Aucun événement trouvé avec ID : " + id);
+        }
     }
 
-    public Optional<Evenement> rechercherEvenement(String id) throws IOException {
-        LOGGER.info("RECHERCHE DE L'EVENEMENT "+ getEvenements().get(id).getNom() + "REUSSI");
-        return Optional.ofNullable(evenements.get(id));
+    /**
+     * Recherche un événement par son ID.
+     * @param id L’identifiant de l’événement
+     * @return Un Optional contenant l’événement s’il est trouvé, sinon vide
+     */
+    public Optional<Evenement> rechercherEvenement(String id) {
+        Evenement event = evenements.get(id);
+        if (event != null) {
+            LOGGER.info("🔍 Événement trouvé : " + event.getNom());
+        } else {
+            LOGGER.warning("❌ Aucun événement trouvé avec ID : " + id);
+        }
+        return Optional.ofNullable(event);
     }
 
-    public Map<String, Evenement> getEvenements() throws IOException {
-        return  JsonSerializer.loadEvenementFromJson(this,"evenements.json");
+    /**
+     * Renvoie tous les événements actuellement chargés en mémoire.
+     * @return Une Map des événements
+     */
+    public Map<String, Evenement> getEvenements() {
+        return evenements;
     }
 
+    /**
+     * Permet de redéfinir complètement la liste des événements.
+     * @param evenements La nouvelle map d’événements
+     */
     public void setEvenements(Map<String, Evenement> evenements) {
         this.evenements = evenements;
+    }
+
+    /**
+     * Sauvegarde les événements en JSON et en XML.
+     * Appelée après chaque modification (ajout ou suppression).
+     */
+    private void sauvegarder() {
+        try {
+            // Sauvegarde en JSON
+            JsonSerializer.saveEvenementToJson(this, "evenements.json");
+
+            // Sauvegarde en XML
+            XmlSerializer.saveEvenementsToXml(new ArrayList<>(evenements.values()), "evenements.xml");
+
+            LOGGER.info("✅ Données sauvegardées en JSON et XML.");
+        } catch (IOException | JAXBException e) {
+            LOGGER.severe("❌ Erreur de sauvegarde : " + e.getMessage());
+        }
     }
 }

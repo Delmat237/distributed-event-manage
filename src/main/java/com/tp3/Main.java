@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 @SuppressWarnings({"CallToPrintStackTrace","FieldMayBeFinal","exports"})
@@ -17,7 +17,7 @@ public class Main extends Application {
 
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
     private static Stage primaryStage;
-    private AnchorPane rootLayout;
+    private BorderPane rootLayout;
 
     @Override
     public void start(Stage primaryStage) {
@@ -36,8 +36,8 @@ public class Main extends Application {
         try {
             // Load root layout from FXML file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/view/LoginView.fxml"));
-            rootLayout = (AnchorPane) loader.load();
+            loader.setLocation(Main.class.getResource("/view/AcceuilView.fxml"));
+            rootLayout = (BorderPane) loader.load();
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);

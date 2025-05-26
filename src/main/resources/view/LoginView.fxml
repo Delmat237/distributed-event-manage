@@ -57,12 +57,7 @@
         </VBox>
 
         <!-- Footer correctement ancré en bas -->
-        <Label text="© ALD - 3 GI - 2025 ENSPY"
-               id="footer"
-               AnchorPane.bottomAnchor="10.0"
-               AnchorPane.leftAnchor="0.0"
-               AnchorPane.rightAnchor="0.0"
-               alignment="CENTER"
-               maxWidth="1.7976931348623157E308" />
+
     </children>
+
 </AnchorPane>

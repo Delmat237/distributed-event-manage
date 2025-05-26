@@ -1,6 +1,5 @@
 package com.tp3.controller;
 
-import com.sun.javafx.scene.control.IDisconnectable;
 import com.tp3.exceptions.EvenementDejaExistantException;
 import com.tp3.model.Concert;
 import com.tp3.model.Conference;
@@ -151,5 +150,6 @@ public class CreerEvenementController {
             return null;
         }
     }
+
 
 }

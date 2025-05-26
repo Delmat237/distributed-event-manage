@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:controller="com.tp3.controller.AccueilController"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@../css/accueil.css"
+            prefWidth="1000" prefHeight="700"
+            style="-fx-background-color: linear-gradient(to bottom right, #f3f4f6, #e5e7eb);">
+
+    <top>
+        <fx:include source="Header.fxml"/>
+    </top>
+
+    <center>
+        <HBox spacing="20">
+
+            <!-- Partie gauche : superposition ScrollPane + image/texte si vide -->
+            <StackPane HBox.hgrow="ALWAYS">
+
+                <!-- ScrollPane contenant les événements -->
+                <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+                    <FlowPane fx:id="evenementListContainer"
+                              hgap="20"
+                              vgap="20"
+                              prefWrapLength="800"
+                              style="-fx-padding: 20;" />
+                </ScrollPane>
+
+                <!-- Contenu affiché si aucun événement -->
+                <VBox fx:id="emptyEventContainer"
+                      alignment="CENTER"
+                      spacing="15"
+                      visible="false"
+                      style="-fx-background-color: transparent;">
+                    <ImageView fx:id="emptyEventImage"
+                               fitWidth="500"
+                               preserveRatio="true"
+                               opacity="0.5">
+                        <image>
+                            <Image url="/view/bg.jpg"/>
+                        </image>
+                    </ImageView>
+                    <Label text="Aucun événement pour le moment."
+                           style="-fx-font-style: italic; -fx-font-size: 16px; -fx-text-fill: #888;" />
+                </VBox>
+
+            </StackPane>
+
+            <!-- Partie droite : panneau de détails -->
+            <VBox fx:id="detailsPane"
+                  spacing="10"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 12;"
+                  prefWidth="300"
+                  visible="false" managed="false">
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-info-circle" iconSize="18"/>
+                    <Label text="Détails de l'Événement" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-id-badge" iconSize="16"/>
+                    <Label fx:id="nomLabel"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-calendar-alt" iconSize="16"/>
+                    <Label fx:id="dateLabel"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-calendar-check" iconSize="16"/>
+                    <Label fx:id="dateFinLabel"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-map-marker-alt" iconSize="16"/>
+                    <Label fx:id="lieuLabel"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-users" iconSize="16"/>
+                    <Label fx:id="capacityLabel"/>
+                </HBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <FontIcon iconLiteral="fas-thumbtack" iconSize="16"/>
+                    <Label fx:id="placeLabel"/>
+                </HBox>
+
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <padding>
+                        <Insets top="20.0" left="20.0" right="20.0" bottom="20.0"/>
+                    </padding>
+
+                    <Button text="Participer" onAction="#handleinscription">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-check-circle" iconSize="14"/>
+                        </graphic>
+                    </Button>
+
+                    <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+
+                    <Button text="Fermer" onAction="#handleFermerDetails">
+                        <graphic>
+                            <FontIcon iconLiteral="fas-times-circle" iconSize="14"/>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <bottom>
+        <fx:include source="Footer.fxml"/>
+    </bottom>
+
+</BorderPane>

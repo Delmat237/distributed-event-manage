@@ -20,8 +20,12 @@ public class LoginController {
     @FXML private ComboBox<String> roleComboBox;
     @FXML private PasswordField passwordField;
     @FXML private TextField emailField;
+
+    //utlise pour charger les vues
+    static String roleCurrentUser;
     
     private Logger logger = Logger.getLogger(LoginController.class.getName());
+
 
     /**
      * Handler pour la connexion de l'utilisateur.
@@ -31,6 +35,8 @@ public class LoginController {
         String email = emailField.getText();
         String password = passwordField.getText();
         String selectedRole = roleComboBox.getValue();
+
+        roleCurrentUser = selectedRole;
 
         if (selectedRole == null || email.isBlank() || password.isBlank()) {
            logger.info("Veuillez remplir tous les champs.");
@@ -47,7 +53,6 @@ public class LoginController {
 
             if (isMatch && email.equals(organisateur.getEmail())) {
                 isAuthenticated = true;
-                LoadPage.load(emailField, "DashboardOrganisateurView", SceneTransitionManager.TransitionType.SLIDE_UP);
             }
         } else  {
             Participant participant = JsonSerializer.loadParticipant("participant.json");
@@ -55,13 +60,14 @@ public class LoginController {
             boolean isMatch = PasswordUtils.checkPassword(password, participant.getPassword()); // true
             if (isMatch && email.equals(participant.getEmail())) {
                 isAuthenticated = true;
-                LoadPage.load(emailField, "DashboardParticipantView", SceneTransitionManager.TransitionType.SLIDE_DOWN);
             }
         }
 
-        if (!isAuthenticated) {
+
+        if (!isAuthenticated)
            logger.info("Identifiants incorrects ou utilisateur non trouvé.");
-        }
+        else
+            LoadPage.load(emailField, "AcceuilView", SceneTransitionManager.TransitionType.SLIDE_DOWN);
     }
 
     /**
@@ -70,4 +76,4 @@ public class LoginController {
     public void goToRegister(ActionEvent actionEvent) throws IOException {
         LoadPage.load(emailField, "RegisterView", SceneTransitionManager.TransitionType.SLIDE_LEFT);
     }
-    }
+}

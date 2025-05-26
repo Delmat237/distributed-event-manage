@@ -19,14 +19,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 //Utile lors de la deserialisation du xml
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso({Conference.class, Concert.class})
-@JsonTypeInfo(
-        use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.PROPERTY,//necessaire pour la deserialization
-        property = "type" // champ "type" dans le JSON
-)
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = Conference.class, name = "conference"),
-        @JsonSubTypes.Type(value = Concert.class, name = "concert")
+        @JsonSubTypes.Type(value = Conference.class),
+        @JsonSubTypes.Type(value = Concert.class)
 })
 public abstract class Evenement implements EvenementObservable {
     protected String id;
@@ -52,6 +48,7 @@ public abstract class Evenement implements EvenementObservable {
         this.lieu = lieu;
         this.capaciteMax = capaciteMax;
         this.statut = EvenementStatut.A_VENIR;
+
     }
 
     protected Evenement() {

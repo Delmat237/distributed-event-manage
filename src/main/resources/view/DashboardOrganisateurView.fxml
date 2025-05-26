@@ -11,6 +11,8 @@
 
     <!-- TOP NAVIGATION BAR -->
     <top>
+        <fx:include source="Header.fxml"/>
+        <Region fx:id="spacer" VBox.vgrow="ALWAYS" style="-fx-padding: 15;"/>
         <HBox styleClass="top-bar" spacing="10" alignment="CENTER_LEFT">
             <padding>
                 <Insets top="10.0" left="10.0" right="10.0" bottom="10.0"/>
@@ -89,6 +91,8 @@
             </VBox>
         </ScrollPane>
     </center>
-    <Label text="© ALD -  3 GI -2025 ENSPY" layoutY="520" layoutX="180" id="footer"/>
+    <bottom>
+        <fx:include source="Footer.fxml"/>
+    </bottom>
 
 </BorderPane>

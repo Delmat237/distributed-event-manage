@@ -1,24 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <evenements>
-    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="concert">
-        <id>eb43142f-2029-450d-908e-f4bc75b53c88</id>
-        <nom>PIPO DANCE</nom>
-        <dateDebut>2025-05-25T10:00</dateDebut>
-        <dateFin>2025-05-26T12:00</dateFin>
-        <lieu>ENSPY</lieu>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
+        <id>E001</id>
+        <nom>JavaConf</nom>
+        <dateDebut>2025-06-10T09:00</dateDebut>
+        <dateFin>2025-07-05T20:00</dateFin>
+        <lieu>Amphi A</lieu>
         <capaciteMax>100</capaciteMax>
-        <artiste>AZANGUE</artiste>
-        <genreMusical>HIP HOP</genreMusical>
+        <statut>A_VENIR</statut>
+        <theme>POO avancée</theme>
+        <intervenants>Prof. Martin</intervenants>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="concert">
+        <id>E002</id>
+        <nom>RockFest</nom>
+        <dateDebut>2025-07-05T20:00</dateDebut>
+        <dateFin>2025-07-05T22:00</dateFin>
+        <lieu>Stade</lieu>
+        <capaciteMax>5000</capaciteMax>
+        <statut>A_VENIR</statut>
+        <artiste>The Rockers</artiste>
+        <genreMusical>Rock</genreMusical>
     </evenement>
     <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
-        <id>473cb7ce-8233-4b41-9481-b811fd6af201</id>
-        <nom>JAVA CONFERENCE</nom>
-        <dateDebut>2025-06-25T10:00</dateDebut>
-        <dateFin>2025-06-02T15:30</dateFin>
-        <lieu>ENSPY</lieu>
-        <capaciteMax>100</capaciteMax>
-        <theme>POO avancée</theme>
-        <intervenants>BALA</intervenants>
-        <intervenants>PIO</intervenants>
+        <id>E003</id>
+        <nom>Python Workshop</nom>
+        <dateDebut>2025-08-15T10:00</dateDebut>
+        <dateFin>2025-08-15T16:00</dateFin>
+        <lieu>Salle B2</lieu>
+        <capaciteMax>50</capaciteMax>
+        <statut>A_VENIR</statut>
+        <theme>Automatisation avec Python</theme>
+        <intervenants>Dr. Ada Lovelace</intervenants>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="concert">
+        <id>E004</id>
+        <nom>Battle of Bands</nom>
+        <dateDebut>2025-09-10T18:00</dateDebut>
+        <dateFin>2025-09-10T23:00</dateFin>
+        <lieu>Stade couvert</lieu>
+        <capaciteMax>3000</capaciteMax>
+        <statut>A_VENIR</statut>
+        <artiste>Plusieurs groupes locaux</artiste>
+        <genreMusical>Varié</genreMusical>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
+        <id>E005</id>
+        <nom>Hackathon ENSPY</nom>
+        <dateDebut>2025-10-01T08:00</dateDebut>
+        <dateFin>2025-10-03T18:00</dateFin>
+        <lieu>Salle informatique</lieu>
+        <capaciteMax>200</capaciteMax>
+        <statut>A_VENIR</statut>
+        <theme>Solutions pour l’éducation</theme>
+        <intervenants>Ing. Kamga, Mme. Djoukoue</intervenants>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="concert">
+        <id>E006</id>
+        <nom>Tournoi de Football</nom>
+        <dateDebut>2025-11-15T14:00</dateDebut>
+        <dateFin>2025-11-20T18:00</dateFin>
+        <lieu>Terrain de sport</lieu>
+        <capaciteMax>1000</capaciteMax>
+        <statut>A_VENIR</statut>
+        <theme>Sport inter-écoles</theme>
     </evenement>
 </evenements>

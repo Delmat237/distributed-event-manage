@@ -1,70 +1,79 @@
 {
-  "E001" : {
-    "id" : "E001",
-    "type":"conference",
-    "nom" : "JavaConf",
-     "dateDebut" : "2025-05-25T10:00:00",
-    "dateFin" : "2025-05-26T12:00:00",
-    "lieu" : "Amphi A",
-    "capaciteMax" : 100,
-    "theme" : "POO avancée",
-    "intervenants" : [ "Prof. Martin" ],
-    "nombreParticipants" : 0
+  "E001": {
+    "id": "E001",
+    "nom": "JavaConf",
+    "dateDebut": "2025-06-10T09:00:00",
+    "dateFin": "2025-07-05T20:00:00",
+    "lieu": "Amphi A",
+    "capaciteMax": 100,
+    "statut": "A_VENIR",
+    "theme": "POO avancée",
+    "intervenants": ["Prof. Martin"],
+    "type": "conference",
+    "nombreParticipants": 0
   },
-  "E002" : {
-    "id" : "E002",
-    "type":"concert",
-    "nom" : "RockFest",
-    "dateDebut" : "2025-05-27T10:00:00",
-    "dateFin" : "2025-05-28T12:00:00",
-    "lieu" : "Stade",
-    "capaciteMax" : 5000,
-    "artiste" : "The Rockers",
-    "genreMusical" : "Rock",
-    "nombreParticipants" : 0
+  "E002": {
+    "id": "E002",
+    "nom": "RockFest",
+    "dateDebut": "2025-07-05T20:00:00",
+    "dateFin": "2025-07-05T22:00:00",
+    "lieu": "Stade",
+    "capaciteMax": 5000,
+    "statut": "A_VENIR",
+    "artiste": "The Rockers",
+    "genreMusical": "Rock",
+    "type": "concert",
+    "nombreParticipants": 0
   },
-   "bef54050-c2e3-4a9d-b965-e729b5b873d2":{
-    "type" : "conference",
-    "id" : "bef54050-c2e3-4a9d-b965-e729b5b873d2",
-    "nom" : "Python training",
-    "dateDebut" : "2025-05-25T10:00:00",
-    "dateFin" : "2025-05-26T12:00:00",
-    "lieu" : "ENSPD",
-    "capaciteMax" : 150,
-    "statut" : null,
-    "theme" : "DEV ",
-    "intervenants" : [ "PIO" ],
-    "type" : "conference",
-    "nombreParticipants" : 0
+  "E003": {
+    "id": "E003",
+    "nom": "Python Workshop",
+    "dateDebut": "2025-08-15T10:00:00",
+    "dateFin": "2025-08-15T16:00:00",
+    "lieu": "Salle B2",
+    "capaciteMax": 50,
+    "statut": "A_VENIR",
+    "theme": "Automatisation avec Python",
+    "intervenants": ["Dr. Ada Lovelace"],
+    "type": "conference",
+    "nombreParticipants": 0
   },
-  "46c371b2-7862-4d5d-a164-0ea20e1cbd87": {
-    "type" : "concert",
-    "id" : "46c371b2-7862-4d5d-a164-0ea20e1cbd87",
-    "nom" : "Dadju",
-    "dateDebut" : "2025-05-05T10:00:00",
-    "dateFin" : "2025-06-05T15:00:00",
-    "lieu" : "CANAL OLYMPIA",
-    "capaciteMax" : 100,
-    "statut" : null,
-    "artiste" : "DADJU",
-    "genreMusical" : "ZOOK",
-    "type" : "concert",
-    "nombreParticipants" : 0
-  }, 
-  "3ccf50c1-6ab1-4c47-a05a-0dbd8bd2ce54":{
-    "type" : "concert",
-    "id" : "3ccf50c1-6ab1-4c47-a05a-0dbd8bd2ce54",
-    "nom" : "Concert Tets",
-    "dateDebut" : "2025-05-25T12:15:00",
-    "dateFin" : "2025-05-26T09:05:00",
-    "lieu" : "ENSPY",
-    "capaciteMax" : 100,
-    "statut" : null,
-    "artiste" : "MOI",
-    "genreMusical" : "SONG",
-    "type" : "concert",
-    "nombreParticipants" : 0
-  } 
+  "E004": {
+    "id": "E004",
+    "nom": "Battle of Bands",
+    "dateDebut": "2025-09-10T18:00:00",
+    "dateFin": "2025-09-10T23:00:00",
+    "lieu": "Stade couvert",
+    "capaciteMax": 3000,
+    "statut": "A_VENIR",
+    "artiste": "Plusieurs groupes locaux",
+    "genreMusical": "Varié",
+    "type": "concert",
+    "nombreParticipants": 0
+  },
+  "E005": {
+    "id": "E005",
+    "nom": "Hackathon ENSPY",
+    "dateDebut": "2025-10-01T08:00:00",
+    "dateFin": "2025-10-03T18:00:00",
+    "lieu": "Salle informatique",
+    "capaciteMax": 200,
+    "statut": "A_VENIR",
+    "theme": "Solutions pour l’éducation",
+    "intervenants": ["Ing. Kamga", "Mme. Djoukoue"],
+    "type": "conference",
+    "nombreParticipants": 0
+  },
+  "E006": {
+    "id": "E006",
+    "nom": "Tournoi de Football",
+    "dateDebut": "2025-11-15T14:00:00",
+    "dateFin": "2025-11-20T18:00:00",
+    "lieu": "Terrain de sport",
+    "capaciteMax": 1000,
+    "statut": "A_VENIR",
+    "theme": "Sport inter-écoles",
+    "type": "concert",
+    "nombreParticipants": 0
+  }
 }
-
-

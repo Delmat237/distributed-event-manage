@@ -40,7 +40,7 @@ public class MainTest {
 
         try {
             organisateur.ajouterEvenement(conf);
-            organisateur.ajouterEvenement(conf);
+          //  organisateur.ajouterEvenement(conf);
 
             organisateur.ajouterEvenement(concert);
 
@@ -58,12 +58,11 @@ public class MainTest {
         conf.annuler();
 
         // Sérialisation JSON
-        try {
-            JsonSerializer.saveEvenementToJson(GestionEvenements.getInstance(), "evenements.json");
-            System.out.println("✅ Données enregistrées en JSON.");
-        } catch (IOException e) {
-            System.err.println("Erreur JSON: " + e.getMessage());
-        }
+
+        GestionEvenements.getInstance().ajouterEvenement(conf);
+        GestionEvenements.getInstance().ajouterEvenement(concert);
+        //JsonSerializer.saveEvenementToJson(GestionEvenements.getInstance(), "evenements.json");
+        System.out.println("✅ Données enregistrées en JSON.");
 
         // Désérialisation JSON
         try {
