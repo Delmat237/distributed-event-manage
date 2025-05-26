@@ -1,5 +1,31 @@
 # 🎯 Distributed Event Management System (JavaFX + Design Patterns)
 
+# SOMMAIRE
+-[🎯 Distributed Event Management System (JavaFX + Design Patterns)](#-distributed-event-management-system-javafx--design-patterns)
+-[📑 Sommaire](#sommaire)
+
+-[📌 Contexte](#-contexte)
+
+ -[❗ Problématique](#-problématique)
+
+ -[🎯 Objectifs](#-objectifs)
+
+ -[ 🧠 Présentation du projet](#-présentation-du-projet)
+
+ -[ 📷 Aperçu (Captures d’écran)](#-aperçu-captures-décran)
+
+ -[🧱 Technologies utilisées](#-technologies-utilisées)
+
+ -[👤 Auteur](#-auteur)
+
+
+  -[📌 Exécution](#-exécution)
+
+ -[📈 Évolutions futures](#-évolutions-futures)
+
+ -[📞 Contact](#-contact)
+
+ -[⚖️ Licence](#️-licence)
 ---
 
 ## 📌 Contexte
