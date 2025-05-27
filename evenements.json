@@ -12,4 +12,32 @@
     "type" : "conference",
     "nombreParticipants" : 1
   }
+ ,
+  "E001" : {
+    "id" : "E001",
+    "nom" : "JavaConf",
+    "dateDebut" : "2025-06-10T09:00:00",
+    "dateFin" : "2025-07-05T20:00:00",
+    "lieu" : "Amphi A",
+    "capaciteMax" : 100,
+    "statut" : "A_VENIR",
+    "theme" : "POO avancée",
+    "intervenants" : [ "Prof. Martin" ],
+    "type" : "conference",
+    "nombreParticipants" : 0
+  },
+  "E002" : {
+    "id" : "E002",
+    "nom" : "RockFest",
+    "dateDebut" : "2025-07-05T20:00:00",
+    "dateFin" : "2025-07-05T22:00:00",
+    "lieu" : "Stade",
+    "capaciteMax" : 5000,
+    "statut" : "A_VENIR",
+    "artiste" : "The Rockers",
+    "genreMusical" : "Rock",
+    "type" : "concert",
+    "nombreParticipants" : 0
+  }
+
 }
