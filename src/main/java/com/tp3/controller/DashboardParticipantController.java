@@ -70,7 +70,7 @@ public class DashboardParticipantController {
      */
     private void setupTableColumns() {
         colNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("dateDebut"));
         colLieu.setCellValueFactory(new PropertyValueFactory<>("lieu"));
         colStatut.setCellValueFactory(new PropertyValueFactory<>("statut"));
     }

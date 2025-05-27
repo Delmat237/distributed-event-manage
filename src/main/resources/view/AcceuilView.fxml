@@ -18,6 +18,24 @@
     </top>
 
     <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+
+        <!-- Barre de filtre -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Rechercher :" />
+            <TextField fx:id="searchField" promptText="Nom de l'événement..." onKeyReleased="#handleSearch"/>
+
+            <Label text="Lieu :" />
+            <ComboBox fx:id="lieuComboBox" promptText="Tous" onAction="#handleFiltreLieu"/>
+
+            <CheckBox fx:id="avenirCheckBox" text="À venir seulement" onAction="#handleFiltreAvenir"/>
+            <CheckBox fx:id="completCheckBox" text="Complet" onAction="#handleFiltreComplet"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Réinitialiser" onAction="#handleResetFiltre"/>
+        </HBox>
+
+        <!-- Conteneur principal : liste + détails -->
         <HBox spacing="20">
 
             <!-- Partie gauche : superposition ScrollPane + image/texte si vide -->
@@ -116,6 +134,7 @@
             </VBox>
 
         </HBox>
+        </VBox>
     </center>
 
     <bottom>

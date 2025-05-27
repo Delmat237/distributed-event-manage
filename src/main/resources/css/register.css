@@ -28,6 +28,7 @@
     -fx-prompt-text-fill: #999;
     -fx-font-size: 13px;
     -fx-text-fill: #222;
+    -fx-pref-width:  250px;
 }
 
 .text-field:focused, .password-field:focused, .combo-box:focused {

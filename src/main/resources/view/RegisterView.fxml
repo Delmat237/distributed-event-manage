@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
-<?import javafx.collections.FXCollections?>
+<?import org.kordamp.ikonli.javafx.*?>
 <?import java.lang.String?>
-
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.tp3.controller.RegisterController"

@@ -1,31 +1,7 @@
 {
-  "id" : "O001",
-  "nom" : "AZANGUE",
+  "id" : "12412bf7-9a28-48a6-803e-88382e80929b",
+  "nom" : "AZANGUE LEONEL D",
   "email" : "azangueleonel9@gmail.com",
-  "password" : "2111",
-  "evenementsOrganises" : [ {
-    "id" : "E001",
-    "nom" : "JavaConf",
-    "dateDebut" : "2025-06-10T09:00:00",
-    "dateFin" : "2025-07-05T20:00:00",
-    "lieu" : "Amphi A",
-    "capaciteMax" : 100,
-    "statut" : "A_VENIR",
-    "theme" : "POO avancée",
-    "intervenants" : [ "Prof. Martin" ],
-    "type" : "conference",
-    "nombreParticipants" : 0
-  }, {
-    "id" : "E002",
-    "nom" : "RockFest",
-    "dateDebut" : "2025-07-05T20:00:00",
-    "dateFin" : "2025-07-05T22:00:00",
-    "lieu" : "Stade",
-    "capaciteMax" : 5000,
-    "statut" : "A_VENIR",
-    "artiste" : "The Rockers",
-    "genreMusical" : "Rock",
-    "type" : "concert",
-    "nombreParticipants" : 0
-  } ]
+  "password" : "$2a$10$.99/RzaeV.od5vUyv.Y6B..ktN9D4rOEI479cMok4/4t8V3qHteKW",
+  "evenementsOrganises" : [ ]
 }

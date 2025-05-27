@@ -8,6 +8,8 @@ public class PasswordUtils {
     }
 
     public static boolean checkPassword(String plainTextPassword, String hashedPassword) {
+        System.out.println("🔍 Hashed password reçu : " + hashedPassword);
         return BCrypt.checkpw(plainTextPassword, hashedPassword);
     }
+
 }

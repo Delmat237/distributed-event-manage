@@ -49,6 +49,7 @@ public class LoginController {
             Organisateur organisateur =  JsonSerializer.loadOrganisateur("organisateur.json");
 
             //verification du mot de passe
+            System.out.println(password);
             boolean isMatch = PasswordUtils.checkPassword(password, organisateur.getPassword());
 
             if (isMatch && email.equals(organisateur.getEmail())) {

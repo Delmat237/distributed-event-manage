@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <evenements>
     <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
+        <id>E005</id>
+        <nom>Hackathon ENSPY</nom>
+        <dateDebut>2025-10-01T08:00</dateDebut>
+        <dateFin>2025-10-03T18:00</dateFin>
+        <lieu>Salle informatique</lieu>
+        <capaciteMax>200</capaciteMax>
+        <statut>A_VENIR</statut>
+        <theme>Solutions pour l’éducation</theme>
+        <intervenants>Ing. Kamga</intervenants>
+        <intervenants>Mme. Djoukoue</intervenants>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
+        <id>E006</id>
+        <nom>Tournoi de Football</nom>
+        <dateDebut>2025-11-15T14:00</dateDebut>
+        <dateFin>2025-11-20T18:00</dateFin>
+        <lieu>Terrain de sport</lieu>
+        <capaciteMax>1000</capaciteMax>
+        <statut>A_VENIR</statut>
+        <theme>Sport inter-écoles</theme>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
+        <id>6ce03aa8-dce4-4717-ad0e-77ada9ef2d66</id>
+        <nom>Hackathon Polytech 2025</nom>
+        <dateDebut>2025-05-26T08:30</dateDebut>
+        <dateFin>2025-05-27T08:30</dateFin>
+        <lieu>ENSPY</lieu>
+        <capaciteMax>150</capaciteMax>
+        <statut>A_VENIR</statut>
+        <theme>Compétition de 24h autour de l'innovation technologique</theme>
+        <intervenants>M.kugne</intervenants>
+    </evenement>
+    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
         <id>E001</id>
         <nom>JavaConf</nom>
         <dateDebut>2025-06-10T09:00</dateDebut>
@@ -43,26 +76,5 @@
         <statut>A_VENIR</statut>
         <artiste>Plusieurs groupes locaux</artiste>
         <genreMusical>Varié</genreMusical>
-    </evenement>
-    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="conference">
-        <id>E005</id>
-        <nom>Hackathon ENSPY</nom>
-        <dateDebut>2025-10-01T08:00</dateDebut>
-        <dateFin>2025-10-03T18:00</dateFin>
-        <lieu>Salle informatique</lieu>
-        <capaciteMax>200</capaciteMax>
-        <statut>A_VENIR</statut>
-        <theme>Solutions pour l’éducation</theme>
-        <intervenants>Ing. Kamga, Mme. Djoukoue</intervenants>
-    </evenement>
-    <evenement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="concert">
-        <id>E006</id>
-        <nom>Tournoi de Football</nom>
-        <dateDebut>2025-11-15T14:00</dateDebut>
-        <dateFin>2025-11-20T18:00</dateFin>
-        <lieu>Terrain de sport</lieu>
-        <capaciteMax>1000</capaciteMax>
-        <statut>A_VENIR</statut>
-        <theme>Sport inter-écoles</theme>
     </evenement>
 </evenements>
