@@ -1,93 +1,15 @@
 {
-  "E005" : {
-    "id" : "E005",
-    "nom" : "Hackathon ENSPY",
-    "dateDebut" : "2025-10-01T08:00:00",
-    "dateFin" : "2025-10-03T18:00:00",
-    "lieu" : "Salle informatique",
-    "capaciteMax" : 200,
-    "statut" : "A_VENIR",
-    "theme" : "Solutions pour l’éducation",
-    "intervenants" : [ "Ing. Kamga", "Mme. Djoukoue" ],
-    "type" : "conference",
-    "nombreParticipants" : 0
-  },
-  "E006" : {
-    "id" : "E006",
-    "nom" : "Tournoi de Football",
-    "dateDebut" : "2025-11-15T14:00:00",
-    "dateFin" : "2025-11-20T18:00:00",
-    "lieu" : "Terrain de sport",
-    "capaciteMax" : 1000,
-    "statut" : "A_VENIR",
-    "theme" : "Sport inter-écoles",
-    "intervenants" : null,
-    "type" : "conference",
-    "nombreParticipants" : 0
-  },
-  "6ce03aa8-dce4-4717-ad0e-77ada9ef2d66" : {
-    "id" : "6ce03aa8-dce4-4717-ad0e-77ada9ef2d66",
-    "nom" : "Hackathon Polytech 2025",
-    "dateDebut" : "2025-05-26T08:30:00",
-    "dateFin" : "2025-05-27T08:30:00",
+  "TESTCONF" : {
+    "id" : "TESTCONF",
+    "nom" : "conf1",
+    "dateDebut" : "2025-05-27T12:08:10.264254017",
+    "dateFin" : "2025-05-27T12:08:10.26432918",
     "lieu" : "ENSPY",
-    "capaciteMax" : 150,
-    "statut" : "A_VENIR",
-    "theme" : "Compétition de 24h autour de l'innovation technologique",
-    "intervenants" : [ "M.kugne" ],
+    "capaciteMax" : 2,
+    "statut" : "TERMINE",
+    "theme" : "Conférence Java",
+    "intervenants" : [ "pio" ],
     "type" : "conference",
-    "nombreParticipants" : 0
-  },
-  "E001" : {
-    "id" : "E001",
-    "nom" : "JavaConf",
-    "dateDebut" : "2025-06-10T09:00:00",
-    "dateFin" : "2025-07-05T20:00:00",
-    "lieu" : "Amphi A",
-    "capaciteMax" : 100,
-    "statut" : "A_VENIR",
-    "theme" : "POO avancée",
-    "intervenants" : [ "Prof. Martin" ],
-    "type" : "conference",
-    "nombreParticipants" : 0
-  },
-  "E002" : {
-    "id" : "E002",
-    "nom" : "RockFest",
-    "dateDebut" : "2025-07-05T20:00:00",
-    "dateFin" : "2025-07-05T22:00:00",
-    "lieu" : "Stade",
-    "capaciteMax" : 5000,
-    "statut" : "A_VENIR",
-    "artiste" : "The Rockers",
-    "genreMusical" : "Rock",
-    "type" : "concert",
-    "nombreParticipants" : 0
-  },
-  "E003" : {
-    "id" : "E003",
-    "nom" : "Python Workshop",
-    "dateDebut" : "2025-08-15T10:00:00",
-    "dateFin" : "2025-08-15T16:00:00",
-    "lieu" : "Salle B2",
-    "capaciteMax" : 50,
-    "statut" : "A_VENIR",
-    "theme" : "Automatisation avec Python",
-    "intervenants" : [ "Dr. Ada Lovelace" ],
-    "type" : "conference",
-    "nombreParticipants" : 0
-  },
-  "E004" : {
-    "id" : "E004",
-    "nom" : "Battle of Bands",
-    "dateDebut" : "2025-09-10T18:00:00",
-    "dateFin" : "2025-09-10T23:00:00",
-    "lieu" : "Stade couvert",
-    "capaciteMax" : 3000,
-    "statut" : "A_VENIR",
-    "artiste" : "Plusieurs groupes locaux",
-    "genreMusical" : "Varié",
-    "type" : "concert",
-    "nombreParticipants" : 0
+    "nombreParticipants" : 1
   }
 }

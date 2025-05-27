@@ -31,7 +31,7 @@ class EvenementTest {
     @DisplayName("Inscription d'un participant")
     void testAjouterParticipant() throws CapaciteMaxAtteinteException {
         conference.ajouterParticipant(participant);
-        assertTrue(conference.getIntervenants().contains(participant));
+        assertTrue(conference.getParticipants().contains(participant));
     }
 
     @Test
@@ -56,7 +56,7 @@ class EvenementTest {
                 () -> conference.ajouterParticipant(p3)
         );
 
-        assertEquals("Capacité maximale atteinte pour l'événement : Conférence Java", thrown.getMessage());
+        assertEquals("Capacité maximale atteinte pour l'événement : conf1", thrown.getMessage());
     }
 
     @Test
@@ -80,10 +80,10 @@ class EvenementTest {
 
         // Chargement
         Map<String, ?> loaded = JsonSerializer.loadEvenementFromJson(nouvelleGestion, filename);
-        assertTrue(loaded.containsKey("conf1"));
+        assertTrue(loaded.containsKey("TESTCONF"));
 
-        Conference loadedConf = (Conference) loaded.get("conf1");
-        assertEquals("Conférence Java", loadedConf.getNom());
+        Conference loadedConf = (Conference) loaded.get("TESTCONF");
+        assertEquals("conf1", loadedConf.getNom());
         assertEquals(1, loadedConf.getIntervenants().size());
 
         // Nettoyage

@@ -35,7 +35,8 @@ public abstract class Evenement implements EvenementObservable {
     protected String lieu;
     protected int capaciteMax;
 
-    @javax.xml.bind.annotation.XmlTransient //tempor    ire , ne pas serializer
+    @javax.xml.bind.annotation.XmlTransient //tempor//   ire , ne pas serializer
+    @com.fasterxml.jackson.annotation.JsonIgnore
     protected List<ParticipantObserver> participants = new ArrayList<>();
 
     protected EvenementStatut statut; //"       A_VENIR, EN_COURS,ANNULE
@@ -64,7 +65,11 @@ public abstract class Evenement implements EvenementObservable {
     public LocalDateTime getDateFin(){return this.dateFin;}
     public int getCapaciteMax(){return this.capaciteMax;}
     public int getNombreParticipants(){return this.participants.size();}
-    public EvenementStatut getStatut(){return this.statut;}
+    public List<ParticipantObserver> getParticipants(){return this.participants;}
+    public EvenementStatut getStatut(){
+        mettreAJourStatut();
+        return this.statut;
+    }
 
 
     //Setter
@@ -79,28 +84,38 @@ public abstract class Evenement implements EvenementObservable {
 
     //leve l'exception CapaciteMaxAtteinteException
  
-    public void ajouterParticipant(ParticipantObserver p) throws CapaciteMaxAtteinteException {
+    public void ajouterParticipant(Participant p) throws CapaciteMaxAtteinteException {
         if (participants.size() >= capaciteMax) {
             p.notifier("L’événement est complet !");
             throw new CapaciteMaxAtteinteException("Capacité maximale atteinte pour l'événement : " + nom);
         }
         p.notifier("Inscription confirmée à l’événement : " + nom);
-        participants.add(p);
         ajouterObservateur(p);
+
     }
 
     public void annuler() {
-        notifierObservateurs("(L’événement '" + this.nom + "' a été annulé.");
+        notifierObservateurs("L’événement '" + this.nom + "' a été annulé.");
         participants.clear();
     }
 
     public void afficherDetails() {
-        System.out.println("Événement : " + this.nom + " | Lieu : " + this.lieu + " | Date : " + this.dateDebut);
+        System.out.println("Événement : " + nom);
+        System.out.println("Type : " + getType());
+        System.out.println("Lieu : " + lieu);
+        System.out.println("Début : " + dateDebut);
+        System.out.println("Fin : " + dateFin);
+        System.out.println("Capacité : " + capaciteMax);
+        System.out.println("Statut : " + statut);
+        System.out.println("Participants inscrits : " + participants.size());
     }
+
 
     @Override
     public void ajouterObservateur(ParticipantObserver p) {
-        participants.add(p);
+        if (!participants.contains(p)) {
+            participants.add(p);
+        }
     }
 
     @Override
@@ -114,5 +129,22 @@ public abstract class Evenement implements EvenementObservable {
             p.notifier(message);
         }
     }
+
+    /*
+    * Methode permettant d emettre a jour le'etat d'un evenement
+     */
+    public void mettreAJourStatut() {
+        LocalDateTime maintenant = LocalDateTime.now();
+        if (statut != EvenementStatut.ANNULE) {
+            if (maintenant.isBefore(dateDebut)) {
+                statut = EvenementStatut.A_VENIR;
+            } else if (maintenant.isAfter(dateFin)) {
+                statut = EvenementStatut.TERMINE;
+            } else {
+                statut = EvenementStatut.EN_COURS;
+            }
+        }
+    }
+
 
 }

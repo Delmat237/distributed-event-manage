@@ -3,6 +3,7 @@ package com.tp3.model;
 import java.time.LocalDateTime;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.tp3.observer.ParticipantObserver;
 
 import javax.xml.bind.annotation.*;
 
@@ -34,4 +35,6 @@ public class Conference extends Evenement {
     public void supprimerParticipant(Participant participant) {
         this.intervenants.remove(participant);
     }
+
+
 }
